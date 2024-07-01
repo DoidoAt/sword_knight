@@ -1,0 +1,234 @@
+[gd_scene load_steps=14 format=3 uid="uid://cai1hev1idi7a"]
+
+[ext_resource type="Script" path="res://ui/shop_ui.gd" id="1_7qlpr"]
+
+[sub_resource type="SystemFont" id="SystemFont_nkq65"]
+font_names = PackedStringArray("Jokerman")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_3i1mf"]
+font = SubResource("SystemFont_nkq65")
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+outline_size = 20
+outline_color = Color(1, 0.95, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3428"]
+load_path = "res://.godot/imported/Button_Blue.png-2ca8a040bd8ea67284f7727bd8fe90c1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5b4wd"]
+load_path = "res://.godot/imported/Button_Blue_Pressed.png-e32291313e7fa5c1549869d45ab3ff61.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6enjo"]
+load_path = "res://.godot/imported/Button_Hover.png-24181b69d82081b85eba5430f7527a72.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qb787"]
+load_path = "res://.godot/imported/Button_Red.png-fb4951b95b832fdfcaf4f5c1b5563b19.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vi2nk"]
+load_path = "res://.godot/imported/Button_Red_Pressed.png-39fe7e35a1864a3f29a238818243462f.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_mm60d"]
+font_color = Color(1, 0.854902, 0, 1)
+outline_size = 5
+outline_color = Color(1, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1pr4l"]
+font_color = Color(1, 0.933333, 0, 1)
+outline_size = 5
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5oh8"]
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0.0588235, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c57qi"]
+bg_color = Color(1, 0.72549, 0, 0.286275)
+
+[sub_resource type="LabelSettings" id="LabelSettings_at1se"]
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ShopUi" type="CanvasLayer"]
+script = ExtResource("1_7qlpr")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_top = -2.0
+offset_right = -93.0
+offset_bottom = 21.0
+grow_horizontal = 2
+scale = Vector2(2.56016, 2.23558)
+text = "SHOP"
+label_settings = SubResource("LabelSettings_3i1mf")
+
+[node name="ButtonBuy" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("CompressedTexture2D_c3428")
+texture_pressed = SubResource("CompressedTexture2D_5b4wd")
+texture_hover = SubResource("CompressedTexture2D_6enjo")
+
+[node name="Label" type="Label" parent="ButtonBuy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+texture_normal = SubResource("CompressedTexture2D_qb787")
+texture_pressed = SubResource("CompressedTexture2D_vi2nk")
+texture_hover = SubResource("CompressedTexture2D_6enjo")
+
+[node name="Label" type="Label" parent="ButtonExit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 24.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel2"]
+layout_mode = 0
+offset_left = -137.0
+offset_top = -122.0
+offset_right = -97.0
+offset_bottom = -82.0
+scale = Vector2(7.07685, 8.09927)
+
+[node name="ColorRect" type="ColorRect" parent="Panel2/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 0.32549)
+
+[node name="LabelPanel1" type="Label" parent="Panel2/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 6.66667
+offset_top = 3.5
+offset_right = 127.667
+offset_bottom = 26.5
+scale = Vector2(0.234877, 0.283749)
+text = "Limit
+Breaker"
+label_settings = SubResource("LabelSettings_mm60d")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel2/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 6.21745
+offset_top = 0.370404
+offset_right = 92.2175
+offset_bottom = 23.3704
+scale = Vector2(0.356858, 0.140183)
+text = "2000 GOLD"
+label_settings = SubResource("LabelSettings_1pr4l")
+
+[node name="LabelPanel12" type="Label" parent="Panel2/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.5761
+offset_top = -19.3809
+offset_right = 178.424
+offset_bottom = 55.6191
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.194474, 0.248122)
+text = "Remove the limits
+on your character
+skills and abilities"
+label_settings = SubResource("LabelSettings_p5oh8")
+horizontal_alignment = 1
+
+[node name="Button1" type="Button" parent="Panel2"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.505882)
+layout_mode = 0
+offset_left = -138.0
+offset_top = -122.0
+offset_right = -83.0
+offset_bottom = -79.0
+scale = Vector2(5.1446, 7.52248)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_c57qi")
+
+[node name="LabelMoney" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -231.0
+offset_top = -423.0
+offset_right = 233.0
+offset_bottom = -354.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.996349, 1.35768)
+text = "Not Enough Money"
+label_settings = SubResource("LabelSettings_at1se")

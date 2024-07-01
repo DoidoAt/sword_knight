@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwkxnw6t23yq"]
+
+[ext_resource type="Texture2D" uid="uid://d0bcmm6rra2yp" path="res://addons/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="1_70md2"]
+[ext_resource type="Script" path="res://ui/panel_ritual.gd" id="2_ycb35"]
+[ext_resource type="PackedScene" uid="uid://p44bapwxf54o" path="res://misc/texture_ritual.tscn" id="3_l5mxv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmmlr"]
+texture = ExtResource("1_70md2")
+texture_margin_left = 48.0
+texture_margin_top = 64.0
+texture_margin_right = 48.0
+texture_margin_bottom = 64.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 0, 128, 160)
+
+[node name="PanelRitual" type="Panel"]
+self_modulate = Color(1, 1, 1, 0.603922)
+offset_right = 361.0
+offset_bottom = 406.0
+scale = Vector2(0.409894, 0.755725)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xmmlr")
+script = ExtResource("2_ycb35")
+
+[node name="GridRitual" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 43.9138
+offset_top = 37.0505
+offset_right = 555.914
+offset_bottom = 2115.05
+scale = Vector2(0.534771, 0.16019)
+theme_override_constants/v_separation = 30
+
+[node name="TextureRitual2" parent="GridRitual" instance=ExtResource("3_l5mxv")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TextureRitual3" parent="GridRitual" instance=ExtResource("3_l5mxv")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TextureRitual4" parent="GridRitual" instance=ExtResource("3_l5mxv")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TextureRitual" parent="GridRitual" instance=ExtResource("3_l5mxv")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8

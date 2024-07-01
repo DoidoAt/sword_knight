@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://by8qmdxqbw5b2"]
+
+[ext_resource type="PackedScene" uid="uid://dxm68b1dqkue4" path="res://player/player.tscn" id="1_t32cb"]
+[ext_resource type="PackedScene" uid="uid://by7rlyeocd6g3" path="res://ui/game_ui.tscn" id="2_lb84n"]
+[ext_resource type="PackedScene" uid="uid://exkms4wg7ipw" path="res://items/meat.tscn" id="8_7ippd"]
+[ext_resource type="PackedScene" uid="uid://bpo4aiorwcdk6" path="res://items/mushroom.tscn" id="9_i6k6f"]
+[ext_resource type="PackedScene" uid="uid://ja6y0qbeoggh" path="res://enemies/dinamite.tscn" id="9_wxo5w"]
+[ext_resource type="PackedScene" uid="uid://dl4iuo44k0fks" path="res://items/sword.tscn" id="10_2p1c0"]
+[ext_resource type="PackedScene" uid="uid://cbdw54j51nm11" path="res://systems/ritual_spawner.tscn" id="11_qnh0u"]
+[ext_resource type="PackedScene" uid="uid://ba6cvir8iixru" path="res://systems/itens_spawner.tscn" id="12_tmoa5"]
+
+[node name="TestUi" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_t32cb")]
+position = Vector2(393, 242)
+
+[node name="GameUi" parent="." instance=ExtResource("2_lb84n")]
+
+[node name="Meat" parent="." instance=ExtResource("8_7ippd")]
+position = Vector2(229, 273)
+frame_progress = 0.0
+
+[node name="Mushroom" parent="." instance=ExtResource("9_i6k6f")]
+position = Vector2(119, 399)
+regeneration = 10
+damage = 2
+invul = 0.5
+
+[node name="Sword" parent="." instance=ExtResource("10_2p1c0")]
+position = Vector2(122, 232)
+
+[node name="Meat2" parent="." instance=ExtResource("8_7ippd")]
+position = Vector2(279, 397)
+frame_progress = 0.0
+
+[node name="RitualSpawner" parent="." instance=ExtResource("11_qnh0u")]
+position = Vector2(333, 465)
+
+[node name="ItenmSpawner" parent="." instance=ExtResource("12_tmoa5")]
+position = Vector2(337, 445)
+
+[node name="Dinamite" parent="." instance=ExtResource("9_wxo5w")]
+position = Vector2(825, 262)

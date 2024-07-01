@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba6cvir8iixru"]
+
+[ext_resource type="Script" path="res://systems/mob_spawnew.gd" id="1_h5w71"]
+[ext_resource type="PackedScene" uid="uid://27xqpv007fto" path="res://items/gold.tscn" id="2_0174n"]
+[ext_resource type="PackedScene" uid="uid://exkms4wg7ipw" path="res://items/meat.tscn" id="2_y8k6r"]
+[ext_resource type="PackedScene" uid="uid://bpo4aiorwcdk6" path="res://items/mushroom.tscn" id="3_3qs87"]
+[ext_resource type="PackedScene" uid="uid://dl4iuo44k0fks" path="res://items/sword.tscn" id="4_5bx6g"]
+
+[sub_resource type="Curve2D" id="Curve2D_0srmu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -652, -746, 0, 0, 0, 0, 1147, -748, 0, 0, 0, 0, 1372, -535, 0, 0, 0, 0, 1404, 253, 0, 0, 0, 0, 1251, 434, 0, 0, 0, 0, -497, 424, 0, 0, 0, 0, -762, 258, 0, 0, 0, 0, -764, -625)
+}
+point_count = 8
+
+[node name="ItenmSpawner" type="Node2D" groups=["items"]]
+position = Vector2(322, 456)
+script = ExtResource("1_h5w71")
+creatures = Array[PackedScene]([ExtResource("2_0174n"), ExtResource("2_y8k6r"), ExtResource("3_3qs87"), ExtResource("4_5bx6g")])
+chance_creatures = Array[float]([0.8, 0.8, 0.15, 0.05])
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(117, 0)
+scale = Vector2(0.494004, 0.584602)
+curve = SubResource("Curve2D_0srmu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-652, -746)
+rotation = -0.00111173
+
+[node name="_Timer_344732" type="Timer" parent="Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true

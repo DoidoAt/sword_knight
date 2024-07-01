@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbdw54j51nm11"]
+
+[ext_resource type="Script" path="res://systems/mob_spawnew.gd" id="1_lo4y5"]
+[ext_resource type="PackedScene" uid="uid://8rn2siigfh57" path="res://magic/ritual_0_item.tscn" id="2_f4cvy"]
+[ext_resource type="PackedScene" uid="uid://b5sv4pk5baf6d" path="res://magic/ritual_1_item.tscn" id="3_ro5qj"]
+
+[sub_resource type="Curve2D" id="Curve2D_0srmu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -652, -746, 0, 0, 0, 0, 1147, -748, 0, 0, 0, 0, 1372, -535, 0, 0, 0, 0, 1404, 253, 0, 0, 0, 0, 1251, 434, 0, 0, 0, 0, -497, 424, 0, 0, 0, 0, -762, 258, 0, 0, 0, 0, -764, -625)
+}
+point_count = 8
+
+[node name="RitualSpawner" type="Node2D" groups=["rituals"]]
+position = Vector2(322, 456)
+script = ExtResource("1_lo4y5")
+creatures = Array[PackedScene]([ExtResource("2_f4cvy"), ExtResource("3_ro5qj")])
+chance_creatures = Array[float]([0.4, 0.1])
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(117, 0)
+scale = Vector2(0.494004, 0.584602)
+curve = SubResource("Curve2D_0srmu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-652, -746)
+rotation = -0.00111173
+
+[node name="_Timer_344732" type="Timer" parent="Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true

@@ -1,0 +1,163 @@
+[gd_scene load_steps=18 format=3 uid="uid://c50i7q6mwuw56"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_hklhh"]
+[ext_resource type="PackedScene" uid="uid://c3sgin6usg0cl" path="res://misc/skull.tscn" id="2_2xx8u"]
+[ext_resource type="PackedScene" uid="uid://dtja1wcp1fj37" path="res://misc/tnt.tscn" id="3_v0ne4"]
+[ext_resource type="PackedScene" uid="uid://34h46c2vy3or" path="res://misc/big_kaboom.tscn" id="4_53jmd"]
+[ext_resource type="Texture2D" uid="uid://f16wekyhgty7" path="res://addons/Tiny Swords/Factions/Goblins/Troops/Barrel/Red/Barrel_Red.png" id="4_ap3ak"]
+[ext_resource type="PackedScene" uid="uid://27xqpv007fto" path="res://items/gold.tscn" id="5_1k7wr"]
+[ext_resource type="Script" path="res://enemies/behaviors/follow_player.gd" id="5_eneb3"]
+[ext_resource type="PackedScene" uid="uid://exkms4wg7ipw" path="res://items/meat.tscn" id="6_k8o2i"]
+[ext_resource type="PackedScene" uid="uid://djk83jtqtevel" path="res://items/golden_meat.tscn" id="7_bnp3k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bwfiq"]
+radius = 17.3684
+height = 50.0
+
+[sub_resource type="Animation" id="Animation_egpyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d7a6c"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 5), Vector2i(1, 5), Vector2i(0, 5), Vector2i(1, 5), Vector2i(0, 5)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"kaboom"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y1llg"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_osyqr"]
+resource_name = "running_1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_taie3"]
+resource_name = "running_2"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7yjqn"]
+_data = {
+"RESET": SubResource("Animation_egpyy"),
+"explosion": SubResource("Animation_d7a6c"),
+"idle": SubResource("Animation_y1llg"),
+"running_1": SubResource("Animation_osyqr"),
+"running_2": SubResource("Animation_taie3")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v2aur"]
+
+[node name="Barrel" type="CharacterBody2D" groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_hklhh")
+health = 20
+damage_points = 50
+death_prefab = ExtResource("2_2xx8u")
+tnt_prefab = ExtResource("3_v0ne4")
+kaboom_prefab = ExtResource("4_53jmd")
+gold = 5
+drop_itens = Array[PackedScene]([ExtResource("5_1k7wr"), ExtResource("6_k8o2i"), ExtResource("7_bnp3k")])
+drop_chances = Array[float]([0.45, 0.5, 0.05])
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -32)
+texture = ExtResource("4_ap3ak")
+hframes = 6
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+scale = Vector2(1.66134, 1.20187)
+shape = SubResource("CapsuleShape2D_bwfiq")
+
+[node name="FollowPlayer" type="Node" parent="."]
+script = ExtResource("5_eneb3")
+speed = 0.5
+type = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7yjqn")
+}
+autoplay = "idle"
+
+[node name="HitBoxArea" type="Area2D" parent="."]
+position = Vector2(0, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea"]
+scale = Vector2(12.9932, 13.4107)
+shape = SubResource("CircleShape2D_v2aur")
+debug_color = Color(0.988235, 0.101961, 0, 0)
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -65.8333)

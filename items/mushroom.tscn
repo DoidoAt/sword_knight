@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpo4aiorwcdk6"]
+
+[ext_resource type="Texture2D" uid="uid://dnpoi4dcabuxc" path="res://addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_sjtwl"]
+[ext_resource type="Texture2D" uid="uid://bhdv76e8foiij" path="res://addons/Tiny Swords/Deco/03.png" id="2_7lfet"]
+[ext_resource type="Script" path="res://items/upgrades_player.gd" id="2_xjcq4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xgrk"]
+atlas = ExtResource("1_sjtwl")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r7xb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xgrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7lfet")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqneg"]
+radius = 34.0147
+
+[node name="Mushroom" type="AnimatedSprite2D" groups=["invulnerability"]]
+sprite_frames = SubResource("SpriteFrames_5r7xb")
+autoplay = "default"
+frame_progress = 1.0
+offset = Vector2(0, -30)
+script = ExtResource("2_xjcq4")
+regeneration = null
+damage = null
+invul = null
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nqneg")

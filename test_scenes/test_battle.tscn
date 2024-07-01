@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bho5obfn0nbs7"]
+
+[ext_resource type="PackedScene" uid="uid://dxm68b1dqkue4" path="res://player/player.tscn" id="1_fvqsc"]
+[ext_resource type="PackedScene" uid="uid://bvjqlgiv4b2mv" path="res://systems/mob_spawner.tscn" id="2_y2cpp"]
+[ext_resource type="PackedScene" uid="uid://ba6cvir8iixru" path="res://systems/itens_spawner.tscn" id="3_cv68o"]
+[ext_resource type="PackedScene" uid="uid://cbdw54j51nm11" path="res://systems/ritual_spawner.tscn" id="4_i2raj"]
+
+[node name="TestBattle" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_fvqsc")]
+position = Vector2(551, 367)
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_y2cpp")]
+
+[node name="ItenmSpawner" parent="." instance=ExtResource("3_cv68o")]
+position = Vector2(346, 438)
+
+[node name="RitualSpawner" parent="." instance=ExtResource("4_i2raj")]
+position = Vector2(312, 450)

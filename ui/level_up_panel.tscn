@@ -1,0 +1,356 @@
+[gd_scene load_steps=14 format=3 uid="uid://n84oabxl2js0"]
+
+[ext_resource type="Script" path="res://ui/level_up_panel.gd" id="1_f2vn8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4i7vq"]
+load_path = "res://.godot/imported/Ribbon_Yellow_3Slides.png-abcf7937f682ae2a6de3d92bc6dcaeb4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8admf"]
+texture = SubResource("CompressedTexture2D_4i7vq")
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_1whwe"]
+font_names = PackedStringArray("Jokerman")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_6onay"]
+font = SubResource("SystemFont_1whwe")
+font_size = 20
+font_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
+outline_size = 10
+outline_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lw8v4"]
+load_path = "res://.godot/imported/Ribbon_Yellow_Connection_Right.png-19cfbac70465b6d2996effc175140a48.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4e5p"]
+texture = SubResource("CompressedTexture2D_lw8v4")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 32.0
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_loly7"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1ube"]
+font_color = Color(1, 0.854902, 0, 1)
+outline_size = 5
+outline_color = Color(1, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3c5e"]
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0.0588235, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs0bv"]
+bg_color = Color(1, 0.72549, 0, 0.286275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srkvs"]
+bg_color = Color(1, 0.698039, 0, 0.568627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjypk"]
+bg_color = Color(1, 0.729412, 0, 0.47451)
+
+[node name="LevelUpUI" type="CanvasLayer"]
+script = ExtResource("1_f2vn8")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.643137)
+
+[node name="TopPanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_right = -256.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(15.3784, 4.03563)
+theme_override_styles/panel = SubResource("StyleBoxTexture_8admf")
+
+[node name="Label" type="Label" parent="TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.1235
+offset_top = -15.7875
+offset_right = 96.8765
+offset_bottom = 22.2125
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.242496, 0.55883)
+text = "Level UP"
+label_settings = SubResource("LabelSettings_6onay")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiddlePanel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 148.0
+offset_right = 255.0
+offset_bottom = 279.0
+grow_horizontal = 2
+scale = Vector2(0.718618, 0.752237)
+theme_override_styles/panel = SubResource("StyleBoxTexture_t4e5p")
+
+[node name="LvlLabel" type="Label" parent="MiddlePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -39.5
+offset_right = 147.5
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0LVL -> 1LVL"
+label_settings = SubResource("LabelSettings_loly7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -39.0
+offset_right = -26.0
+offset_bottom = 1.0
+scale = Vector2(4.3, 5.4)
+
+[node name="ColorRect" type="ColorRect" parent="Panel/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 0.32549)
+
+[node name="LabelPanel1" type="Label" parent="Panel/ColorRect/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.66667
+offset_top = 3.5
+offset_right = 127.667
+offset_bottom = 26.5
+scale = Vector2(0.234877, 0.283749)
+text = "Chain
+Lightning"
+label_settings = SubResource("LabelSettings_p1ube")
+horizontal_alignment = 1
+
+[node name="LabelPanel12" type="Label" parent="Panel/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.3333
+offset_top = -15.75
+offset_right = 178.667
+offset_bottom = 33.25
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.194474, 0.248122)
+text = "Gain/ Increase the ability:
+Chain Lightning"
+label_settings = SubResource("LabelSettings_i3c5e")
+horizontal_alignment = 1
+
+[node name="Button1" type="Button" parent="Panel"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.505882)
+layout_mode = 0
+offset_left = -68.0
+offset_top = -40.0
+offset_right = -23.0
+scale = Vector2(3.79991, 5.45576)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_fs0bv")
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -13.0
+offset_right = -239.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel2"]
+layout_mode = 0
+offset_left = -107.0
+offset_top = -29.0
+offset_right = -67.0
+offset_bottom = 11.0
+rotation = -0.270526
+scale = Vector2(4.3, 5.4)
+
+[node name="ColorRect" type="ColorRect" parent="Panel2/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 0.32549)
+
+[node name="LabelPanel2" type="Label" parent="Panel2/ColorRect/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.66667
+offset_top = 3.5
+offset_right = 127.667
+offset_bottom = 26.5
+scale = Vector2(0.218537, 0.298067)
+text = "Chain
+Lightning"
+label_settings = SubResource("LabelSettings_p1ube")
+horizontal_alignment = 1
+
+[node name="LabelPanel22" type="Label" parent="Panel2/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.3333
+offset_top = -15.75
+offset_right = 178.667
+offset_bottom = 33.25
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.194474, 0.248122)
+text = "Gain/ Increase the ability:
+Chain Lightning"
+label_settings = SubResource("LabelSettings_i3c5e")
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Panel2"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.521569)
+layout_mode = 0
+offset_left = -107.0
+offset_top = -30.0
+offset_right = -62.0
+offset_bottom = 10.0
+rotation = -0.270526
+scale = Vector2(3.79991, 5.45576)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_srkvs")
+
+[node name="Panel3" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 265.0
+offset_top = -17.0
+offset_right = 305.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -97.0
+offset_right = -24.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.13439
+scale = Vector2(4.3, 5.4)
+
+[node name="ColorRect" type="ColorRect" parent="Panel3/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 20.0
+color = Color(0, 0, 0, 0.32549)
+
+[node name="LabelPanel3" type="Label" parent="Panel3/ColorRect/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.66667
+offset_top = 3.5
+offset_right = 127.667
+offset_bottom = 26.5
+scale = Vector2(0.226275, 0.308396)
+text = "Chain
+Lightning"
+label_settings = SubResource("LabelSettings_p1ube")
+horizontal_alignment = 1
+
+[node name="LabelPanel32" type="Label" parent="Panel3/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.3333
+offset_top = -15.75
+offset_right = 178.667
+offset_bottom = 33.25
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.194474, 0.248122)
+text = "Gain/ Increase the ability:
+Chain Lightning"
+label_settings = SubResource("LabelSettings_i3c5e")
+horizontal_alignment = 1
+
+[node name="Button3" type="Button" parent="Panel3"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.470588)
+layout_mode = 0
+offset_left = -43.0
+offset_top = -78.0
+offset_right = 2.0
+offset_bottom = -38.0
+rotation = 0.13439
+scale = Vector2(3.79991, 5.45576)
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_gjypk")

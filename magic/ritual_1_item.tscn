@@ -1,0 +1,143 @@
+[gd_scene load_steps=15 format=3 uid="uid://b5sv4pk5baf6d"]
+
+[ext_resource type="Script" path="res://items/upgrades_player.gd" id="1_ecl7n"]
+[ext_resource type="Texture2D" uid="uid://bymh7nlkh30ue" path="res://addons/Particles/PNG (Transparent)/spark_07.png" id="2_p353y"]
+[ext_resource type="Texture2D" uid="uid://bou8ychpbbhqc" path="res://addons/Particles/PNG (Transparent)/spark_06.png" id="3_hq0uv"]
+[ext_resource type="Texture2D" uid="uid://c4cv4v5njkbct" path="res://addons/Particles/PNG (Transparent)/spark_05.png" id="4_t2r1l"]
+[ext_resource type="Texture2D" uid="uid://c1dgvm56xtvaj" path="res://addons/Particles/PNG (Transparent)/magic_01.png" id="5_2tqi3"]
+[ext_resource type="Texture2D" uid="uid://cil7wene4u8l1" path="res://addons/Particles/PNG (Transparent)/spark_01.png" id="6_367fa"]
+[ext_resource type="Texture2D" uid="uid://b13det4yr6kww" path="res://addons/Particles/PNG (Transparent)/spark_02.png" id="7_fb3vp"]
+[ext_resource type="Texture2D" uid="uid://by6h62updebu8" path="res://addons/Particles/PNG (Transparent)/spark_03.png" id="8_r3rgq"]
+[ext_resource type="Texture2D" uid="uid://dm4nmw5o34327" path="res://addons/Particles/PNG (Transparent)/spark_04.png" id="9_mogqn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r7xb"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqneg"]
+radius = 34.0147
+
+[sub_resource type="Animation" id="Animation_4qkc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Magic01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lql5i"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Magic01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 0.0, -0.785398, 0.0, 0.785398]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6eh4"]
+_data = {
+"RESET": SubResource("Animation_4qkc0"),
+"default": SubResource("Animation_lql5i")
+}
+
+[node name="RitualLItem" type="AnimatedSprite2D" groups=["ritual_1"]]
+position = Vector2(139, 90)
+sprite_frames = SubResource("SpriteFrames_5r7xb")
+autoplay = "default"
+frame_progress = 1.0
+offset = Vector2(0, -30)
+script = ExtResource("1_ecl7n")
+damage = 7
+cooldown = 90.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nqneg")
+
+[node name="Images" type="Node2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(0, -12)
+scale = Vector2(0.0812403, 0.0836821)
+
+[node name="Spark11" type="Sprite2D" parent="Images"]
+position = Vector2(-0.739486, -261.205)
+texture = ExtResource("2_p353y")
+
+[node name="Spark08" type="Sprite2D" parent="Images"]
+position = Vector2(-26.6215, -71.7181)
+scale = Vector2(0.83542, 0.656564)
+texture = ExtResource("3_hq0uv")
+
+[node name="Spark09" type="Sprite2D" parent="Images"]
+position = Vector2(-204.838, -67.1886)
+scale = Vector2(0.537628, 0.71297)
+texture = ExtResource("4_t2r1l")
+
+[node name="Spark10" type="Sprite2D" parent="Images"]
+position = Vector2(-162.687, -5.28449)
+texture = ExtResource("4_t2r1l")
+
+[node name="Magic01" type="Sprite2D" parent="Images"]
+modulate = Color(0.41, 0, 0.273333, 1)
+texture = ExtResource("5_2tqi3")
+
+[node name="Spark01" type="Sprite2D" parent="Images"]
+modulate = Color(0.73, 0, 0.73, 1)
+self_modulate = Color(1, 1, 1, 0)
+rotation = -3.14159
+texture = ExtResource("6_367fa")
+
+[node name="Spark02" type="Sprite2D" parent="Images"]
+modulate = Color(0.73, 0, 0.73, 1)
+self_modulate = Color(1, 1, 1, 0)
+rotation = 3.14159
+texture = ExtResource("7_fb3vp")
+
+[node name="Spark03" type="Sprite2D" parent="Images"]
+modulate = Color(0.73, 0, 0.73, 1)
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("8_r3rgq")
+
+[node name="Spark04" type="Sprite2D" parent="Images"]
+modulate = Color(0.73, 0, 0.73, 1)
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("9_mogqn")
+
+[node name="Spark05" type="Sprite2D" parent="Images"]
+position = Vector2(203.359, -80.0224)
+scale = Vector2(0.58066, 0.655142)
+texture = ExtResource("4_t2r1l")
+
+[node name="Spark06" type="Sprite2D" parent="Images"]
+position = Vector2(7.39486, -7.54928)
+texture = ExtResource("3_hq0uv")
+
+[node name="Spark07" type="Sprite2D" parent="Images"]
+position = Vector2(252.165, -5.28449)
+texture = ExtResource("4_t2r1l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j6eh4")
+}
+autoplay = "default"

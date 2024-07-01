@@ -1,0 +1,281 @@
+[gd_scene load_steps=23 format=3 uid="uid://by7rlyeocd6g3"]
+
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_0u238"]
+[ext_resource type="PackedScene" uid="uid://cai1hev1idi7a" path="res://ui/shop_ui.tscn" id="3_o4y26"]
+[ext_resource type="PackedScene" uid="uid://djwkxnw6t23yq" path="res://ui/panel_ritual.tscn" id="7_0nopr"]
+[ext_resource type="PackedScene" uid="uid://n84oabxl2js0" path="res://ui/level_up_panel.tscn" id="8_4mwsh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4i7vq"]
+load_path = "res://.godot/imported/Ribbon_Yellow_3Slides.png-abcf7937f682ae2a6de3d92bc6dcaeb4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgvar"]
+texture = SubResource("CompressedTexture2D_4i7vq")
+texture_margin_left = 48.0
+texture_margin_top = 16.0
+texture_margin_right = 48.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_8c1u5"]
+font_names = PackedStringArray("Bookman Old Style")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_2m0sm"]
+font = SubResource("SystemFont_8c1u5")
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fp6br"]
+load_path = "res://.godot/imported/Banner_Horizontal.png-302ea592944586001673d7b987b119b7.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cppf1"]
+texture = SubResource("CompressedTexture2D_fp6br")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_020y7"]
+font_names = PackedStringArray("Jokerman")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_i05df"]
+font = SubResource("SystemFont_020y7")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_my26n"]
+load_path = "res://.godot/imported/G_Idle.png-f51290a4da9f4668571f41caf05af149.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx4l6"]
+atlas = SubResource("CompressedTexture2D_my26n")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xpfe7"]
+load_path = "res://.godot/imported/M_Idle.png-3d3cb965afeb198bdf7196b2ee1a2adb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5luct"]
+atlas = SubResource("CompressedTexture2D_xpfe7")
+region = Rect2(32, 48, 64, 48)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0qnas"]
+load_path = "res://.godot/imported/15.png-d64c335c84ae24b38a1081e21de37982.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgd7u"]
+atlas = SubResource("CompressedTexture2D_0qnas")
+region = Rect2(16, 16, 32, 32)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qb787"]
+load_path = "res://.godot/imported/Button_Red.png-fb4951b95b832fdfcaf4f5c1b5563b19.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vi2nk"]
+load_path = "res://.godot/imported/Button_Red_Pressed.png-39fe7e35a1864a3f29a238818243462f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6enjo"]
+load_path = "res://.godot/imported/Button_Hover.png-24181b69d82081b85eba5430f7527a72.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_llr83"]
+load_path = "res://.godot/imported/Button_Disable.png-bb485652ac3a522dd78ace5210773572.ctex"
+
+[node name="GameUi" type="CanvasLayer"]
+script = ExtResource("1_0u238")
+lvl_ui = ExtResource("8_4mwsh")
+shop_ui = ExtResource("3_o4y26")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 35.0
+offset_right = 98.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tgvar")
+
+[node name="TimerLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -26.5
+offset_right = 44.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "08:50"
+label_settings = SubResource("LabelSettings_2m0sm")
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.313726)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -244.0
+offset_top = 50.0
+offset_right = 1.0
+offset_bottom = 212.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cppf1")
+
+[node name="GoldLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -70.0
+offset_right = 99.5
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "20000"
+label_settings = SubResource("LabelSettings_i05df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MinscLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -33.0
+offset_right = 78.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50
+"
+label_settings = SubResource("LabelSettings_i05df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KillLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.5
+offset_top = -22.0
+offset_right = 79.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+label_settings = SubResource("LabelSettings_i05df")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureGold" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 2.0
+offset_right = 174.0
+offset_bottom = 130.0
+scale = Vector2(0.371953, 0.327985)
+texture = SubResource("AtlasTexture_rx4l6")
+
+[node name="TextureMinsc" type="TextureRect" parent="Panel2"]
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 38.0
+offset_right = 163.0
+offset_bottom = 166.0
+scale = Vector2(0.426165, 0.370547)
+texture = SubResource("AtlasTexture_5luct")
+
+[node name="TextureKill" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 63.5
+offset_right = 104.0
+offset_bottom = 127.5
+scale = Vector2(0.826419, 0.665008)
+texture = SubResource("AtlasTexture_qgd7u")
+
+[node name="PanelRitual" parent="." instance=ExtResource("7_0nopr")]
+offset_left = 3.0
+offset_top = 29.0
+offset_right = 364.0
+offset_bottom = 435.0
+
+[node name="LevelBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+max_value = 10.0
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="LevelBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Level: "
+
+[node name="ShopButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -334.0
+offset_top = 51.0
+offset_right = -270.0
+offset_bottom = 115.0
+grow_horizontal = 0
+scale = Vector2(1.29453, 1.33521)
+texture_normal = SubResource("CompressedTexture2D_qb787")
+texture_pressed = SubResource("CompressedTexture2D_vi2nk")
+texture_hover = SubResource("CompressedTexture2D_6enjo")
+texture_disabled = SubResource("CompressedTexture2D_llr83")
+
+[node name="Label" type="Label" parent="ShopButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.4127
+offset_top = -20.7658
+offset_right = 23.5873
+offset_bottom = 2.23417
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.897225, 0.898478)
+text = "SHOP"

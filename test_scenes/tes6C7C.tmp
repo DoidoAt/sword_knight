@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bho5obfn0nbs7"]
+
+[ext_resource type="PackedScene" uid="uid://dxm68b1dqkue4" path="res://player/player.tscn" id="1_fvqsc"]
+[ext_resource type="PackedScene" uid="uid://bvjqlgiv4b2mv" path="res://systems/mob_spawner.tscn" id="2_y2cpp"]
+
+[node name="TestBattle" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_fvqsc")]
+position = Vector2(611, 334)
+speed = 3.0
+sword_damage = 3
+max_sword_damage = 15
+ritual_scene = Array[PackedScene]([])
+max_health = 100
+hitbox_cooldown = 0.0
+max_hitbox_cooldown = 10.0
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_y2cpp")]

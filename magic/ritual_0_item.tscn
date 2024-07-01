@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://8rn2siigfh57"]
+
+[ext_resource type="Texture2D" uid="uid://32n8p1mlv4oc" path="res://addons/Particles/PNG (Transparent)/circle_03.png" id="2_0xcu3"]
+[ext_resource type="Script" path="res://items/upgrades_player.gd" id="3_o1hmw"]
+[ext_resource type="Texture2D" uid="uid://xe5t27f3fb7v" path="res://addons/Particles/PNG (Transparent)/light_02.png" id="3_ufyvp"]
+[ext_resource type="Texture2D" uid="uid://3347wnq5xdgu" path="res://addons/Particles/PNG (Transparent)/magic_02.png" id="4_osgjl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r7xb"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqneg"]
+radius = 34.0147
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mslqd"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_pp3se"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Magic02:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_i2nkj"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Images/Magic02:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 1.5708, 6.28319, 1.5708, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip80i"]
+_data = {
+"RESET": SubResource("Animation_pp3se"),
+"default": SubResource("Animation_i2nkj")
+}
+
+[node name="RitualItem" type="AnimatedSprite2D" groups=["ritual_0"]]
+position = Vector2(139, 90)
+sprite_frames = SubResource("SpriteFrames_5r7xb")
+autoplay = "default"
+frame_progress = 1.0
+offset = Vector2(0, -30)
+script = ExtResource("3_o1hmw")
+damage = 5
+cooldown = 60.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nqneg")
+
+[node name="Images" type="Node2D" parent="."]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(1, -15)
+scale = Vector2(0.129548, 0.0925)
+
+[node name="Circle03" type="Sprite2D" parent="Images"]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("CanvasItemMaterial_mslqd")
+scale = Vector2(0.89582, 0.944472)
+texture = ExtResource("2_0xcu3")
+
+[node name="Light02" type="Sprite2D" parent="Images"]
+material = SubResource("CanvasItemMaterial_mslqd")
+scale = Vector2(0.683, 0.69)
+texture = ExtResource("3_ufyvp")
+
+[node name="Magic02" type="Sprite2D" parent="Images"]
+material = SubResource("CanvasItemMaterial_mslqd")
+scale = Vector2(1.63007, 1.60911)
+texture = ExtResource("4_osgjl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ip80i")
+}
+autoplay = "default"

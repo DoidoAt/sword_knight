@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://p44bapwxf54o"]
+
+[ext_resource type="Texture2D" uid="uid://3347wnq5xdgu" path="res://addons/Particles/PNG (Transparent)/magic_02.png" id="1_acw22"]
+[ext_resource type="Script" path="res://misc/texture_ritual.gd" id="2_sttmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtnmo"]
+size = Vector2(115.529, 96.8794)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ottjn"]
+bg_color = Color(0, 0, 0, 0.521569)
+
+[sub_resource type="LabelSettings" id="LabelSettings_alwvw"]
+font_size = 90
+
+[node name="TextureRitual" type="TextureRect" groups=["static"]]
+mouse_filter = 2
+texture = ExtResource("1_acw22")
+script = ExtResource("2_sttmj")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+value = 100.0
+show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(257, 257)
+
+[node name="ColisionInformation" type="CollisionShape2D" parent="Area2D"]
+unique_name_in_owner = true
+scale = Vector2(4.37119, 5.27322)
+shape = SubResource("RectangleShape2D_mtnmo")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -201.0
+offset_right = 1275.0
+offset_bottom = 565.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ottjn")
+
+[node name="Label" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.5
+offset_top = -311.0
+offset_right = 554.5
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_alwvw")
+horizontal_alignment = 1
+vertical_alignment = 1

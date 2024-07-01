@@ -1,0 +1,469 @@
+[gd_scene load_steps=20 format=3 uid="uid://cyjgkrtx4ffwf"]
+
+[ext_resource type="Script" path="res://ui/game_over_ui.gd" id="1_83epk"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_usrby"]
+load_path = "res://.godot/imported/Ribbon_Red_3Slides.png-dc0064da7d595602afc71f602fe8a40f.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkia4"]
+texture = SubResource("CompressedTexture2D_usrby")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="SystemFont" id="SystemFont_d1g5f"]
+font_names = PackedStringArray("Jokerman")
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lxoe"]
+font = SubResource("SystemFont_d1g5f")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sdthp"]
+load_path = "res://.godot/imported/Banner_Connection_Down.png-01024f2f906e76fa407b4d2ad5989a84.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ienvv"]
+texture = SubResource("CompressedTexture2D_sdthp")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+region_rect = Rect2(32, 48, 128, 144)
+
+[sub_resource type="SystemFont" id="SystemFont_jn484"]
+font_names = PackedStringArray("Jokerman")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ohfyn"]
+font = SubResource("SystemFont_jn484")
+font_size = 17
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(1, 0.768627, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fp6br"]
+load_path = "res://.godot/imported/Banner_Horizontal.png-302ea592944586001673d7b987b119b7.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70kcg"]
+texture = SubResource("CompressedTexture2D_fp6br")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_8y3jy"]
+font_names = PackedStringArray("Jokerman")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_b67fg"]
+font = SubResource("SystemFont_8y3jy")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+outline_color = Color(1, 0.788235, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3428"]
+load_path = "res://.godot/imported/Button_Blue.png-2ca8a040bd8ea67284f7727bd8fe90c1.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5b4wd"]
+load_path = "res://.godot/imported/Button_Blue_Pressed.png-e32291313e7fa5c1549869d45ab3ff61.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6enjo"]
+load_path = "res://.godot/imported/Button_Hover.png-24181b69d82081b85eba5430f7527a72.ctex"
+
+[sub_resource type="Animation" id="Animation_uya4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGround:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.647059)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CTopPanel/TopPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(296, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CBottomPanel/BottomPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(294, 368)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddlePanel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.26911, 1.00574)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MiddlePanel:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CBottomPanel/BottomPanel/RestartButton:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nyqbr"]
+resource_name = "default"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGround:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.307786, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.870588)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CTopPanel/TopPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.392292, 1),
+"update": 0,
+"values": [Vector2(-224, -450), Vector2(-249, 4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CBottomPanel/BottomPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(-251, 607), Vector2(-254, -176)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MiddlePanel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.26911, 1.00574)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MiddlePanel:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-4.46455, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CBottomPanel/BottomPanel/RestartButton:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q4ugd"]
+_data = {
+"RESET": SubResource("Animation_uya4m"),
+"default": SubResource("Animation_nyqbr")
+}
+
+[node name="GameOverUi" type="CanvasLayer"]
+script = ExtResource("1_83epk")
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.647059)
+
+[node name="CTopPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TopPanel" type="Panel" parent="CTopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 296.0
+offset_top = 8.0
+offset_right = 862.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lkia4")
+
+[node name="GameOverLabel" type="Label" parent="CTopPanel/TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -22.0
+offset_right = 38.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_6lxoe")
+
+[node name="MiddlePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -214.0
+offset_right = 100.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.26911, 1.00574)
+theme_override_styles/panel = SubResource("StyleBoxTexture_ienvv")
+
+[node name="CenterContainer" type="CenterContainer" parent="MiddlePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.5
+offset_right = 191.5
+offset_bottom = 117.0
+grow_horizontal = 2
+scale = Vector2(0.981164, 1.35345)
+
+[node name="GridContainer" type="GridContainer" parent="MiddlePanel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Label" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Time Survived:"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="TimeLabel" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10:39"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="Label2" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Monster Defeated:"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="MonstersLabel" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1234"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="Label3" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Itens Collected:"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="ItensLabel" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "185"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="Label4" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "Gold:"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="GoldLabel" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20000"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="Label5" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+layout_mode = 2
+text = "LVL:"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="LvlLabel" type="Label" parent="MiddlePanel/CenterContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+label_settings = SubResource("LabelSettings_ohfyn")
+
+[node name="CBottomPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.0196078)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BottomPanel" type="Panel" parent="CBottomPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 294.0
+offset_top = 368.0
+offset_right = 901.0
+offset_bottom = 585.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_70kcg")
+
+[node name="GridContainer" type="GridContainer" parent="CBottomPanel/BottomPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -53.0004
+offset_right = 249.0
+offset_bottom = 8.99957
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+columns = 2
+
+[node name="Label" type="Label" parent="CBottomPanel/BottomPanel/GridContainer"]
+layout_mode = 2
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_b67fg")
+
+[node name="ScoreLabel" type="Label" parent="CBottomPanel/BottomPanel/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "16541654659999"
+label_settings = SubResource("LabelSettings_b67fg")
+
+[node name="RestartButton" type="TextureButton" parent="CBottomPanel/BottomPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -104.001
+offset_right = -5.0
+offset_bottom = -40.0014
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.39094, 1.09877)
+texture_normal = SubResource("CompressedTexture2D_c3428")
+texture_pressed = SubResource("CompressedTexture2D_5b4wd")
+texture_hover = SubResource("CompressedTexture2D_6enjo")
+
+[node name="Label" type="Label" parent="CBottomPanel/BottomPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 28.9993
+offset_right = 16.0
+offset_bottom = 51.9993
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.573907, 1)
+text = "Restart"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q4ugd")
+}
+autoplay = "default"
