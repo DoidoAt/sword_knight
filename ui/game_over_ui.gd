@@ -21,10 +21,9 @@ func _ready():
 	lvl_label.text = str(GameManager.lvl)
 	
 	
-	score_total = GameManager.kill_collected * GameManager.minsc_collected * GameManager.gold_collected
-	score_total *= GameManager.time_elapsed
+	score_total = GameManager.kill_collected + GameManager.minsc_collected + GameManager.gold_collected
+	score_total += GameManager.time_elapsed
 	score_total *= GameManager.lvl
-	score_total /= 5
 	
 	if GameManager.bought:
 		score_total *= 5

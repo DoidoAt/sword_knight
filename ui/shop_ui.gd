@@ -29,6 +29,7 @@ func buy():
 			GameManager.player.ritual_max_damage[i] = 999
 		GameManager.player.max_health = 200
 		GameManager.bought = true
+		GameManager.gold_collected -= 2000
 		exit()
 	else:
 		label_money.visible = true

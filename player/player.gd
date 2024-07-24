@@ -140,7 +140,7 @@ func add_ritual(nome: String, damag: int, coold: float) -> void:
 		
 	else:
 		ritual_damage[index] = mini(ritual_damage[index] + ritual_inc_damage[index], ritual_max_damage[index])
-		ritual_max_interval[index] = mini(ritual_max_interval[index] - 5, ritual_compare_max)
+		ritual_max_interval[index] = maxf(ritual_max_interval[index] - 5, ritual_compare_max)
 		GameManager.panel_ritual.update(index, ritual_max_interval[index])
 
 
