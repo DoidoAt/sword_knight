@@ -1,6 +1,8 @@
 # Sword Knight
 Projeto desenvolvido durante a participação do Bootcamp da Santander - DIO para aprendizado de criação de jogos utilizando GODOT.
 
+Você pode jogar o jogo aqui: https://esoj70.itch.io/sword-knight
+
 -- ENG --
 Game developed as a project during the Bootcamp from Santander - DIO, to learn about game creation using GODOT.
 
