@@ -6,6 +6,8 @@ Você pode jogar o jogo aqui: https://esoj70.itch.io/sword-knight
 -- ENG --
 Game developed as a project during the Bootcamp from Santander - DIO, to learn about game creation using GODOT.
 
+You can play the game here: https://esoj70.itch.io/sword-knight
+
 ## Primeiros Passos - First Step
 A criação do jogo começou com o desenvolvimento do jogador, seus movimentos e ações.
 Depois, foi criado os inimigos - ovelha, peão e goblin - com suas ações.
